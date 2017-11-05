@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <!-- ========================================================= -->
+    <!-- ======================== Defaults ======================= -->
+    <!-- ========================================================= -->
+    <title>Entity of Inventario Component</title>
+    <description>None</description>
+    <copyright></copyright>
+    <version></version>
+
+    <entity entity-name="Ingredient" package-name="org.ofbiz.inventario" title="Ingredient Entity">
+        <field name="ingredientId" type="id"><description>primary sequenced ID</description></field>
+        <field name="ingredientName" type="name"></field>
+        <field name="ingredientWeight" type="numeric"></field>
+        <field name="ingredientComments" type="comment"></field>
+        <index name="INGREDIENT_NAME_IDX" unique="true">
+            <index-field name="ingredientName"/>
+        </index>
+        <prim-key field="ingredientId"/>
+    </entity>
+
+    <entity entity-name="Recipe" package-name="org.ofbiz.inventario" title="Recipe Entity">
+        <field name="recipeId" type="id"><description>primary sequenced ID</description></field>
+        <field name="recipeName" type="name"></field>
+        <field name="recipeAvailable" type="numeric"></field>
+        <field name="recipePrice" type="floating-point"></field>
+        <field name="recipeComments" type="comment"></field>
+        <index name="RECIPE_NAME_IDX" unique="true">
+            <index-field name="recipeName"/>
+        </index>
+        <prim-key field="recipeId"/>
+    </entity>
+
+    <entity entity-name="RecipeIngredient" package-name="org.ofbiz.inventario" title="Recipe Ingredient Entity">
+        <field name="recipeIngredientId" type="id"><description>primary sequenced ID</description></field>
+        <field name="recipeId" type="id"></field>
+        <field name="ingredientId" type="id"></field>
+        <field name="recipeIngredientWeight" type="numeric"></field>
+        <field name="recipeIngredientComments" type="comment"></field>
+        <prim-key field="recipeIngredientId"/>
+    </entity>
+</entitymodel>

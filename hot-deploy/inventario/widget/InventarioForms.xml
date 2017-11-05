@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+    <form name="AddIngredient" type="single" target="createIngredient">
+        <auto-fields-service service-name="createIngredient"/>
+        <field name="ingredientId" title="${uiLabelMap.IngredientId}"><text/></field>
+        <field name="ingredientName" title="${uiLabelMap.IngredientName}" required-field="true"><text/></field>
+        <field name="ingredientWeight" title="${uiLabelMap.IngredientWeight}" required-field="true"></field>
+        <field name="ingredientComments" title="${uiLabelMap.Comment}"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="RemoveIngredient" type="single" target="removeIngredient">
+    	<auto-fields-service service-name="removeIngredient"/>
+        <field name="ingredientId" title="${uiLabelMap.IngredientId}" required-field="true"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonRemove}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="AddRecipe" type="single" target="createRecipe">
+        <auto-fields-service service-name="createRecipe"/>
+        <field name="recipeId" title="${uiLabelMap.RecipeId}"><text/></field>
+        <field name="recipeName" title="${uiLabelMap.RecipeName}" required-field="true"><text/></field>
+        <field name="recipePrice" title="${uiLabelMap.Price}" required-field="true"><text/></field>
+        <field name="recipeComments" title="${uiLabelMap.Comment}"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="RemoveRecipe" type="single" target="removeRecipe">
+    	<auto-fields-service service-name="removeRecipe"/>
+        <field name="recipeId" title="${uiLabelMap.RecipeId}" required-field="true"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonRemove}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="AddIngredientToRecipe" type="single" target="addIngredientToRecipe">
+    	<auto-fields-service service-name="addIngredientToRecipe"/>
+        <field name="recipeIngredientId" title="${uiLabelMap.RecipeIngredientId}"><text/></field>
+        <field name="ingredientId" title="${uiLabelMap.Ingredient}">
+            <drop-down allow-empty="false" current-description="">
+                <entity-options description="${ingredientName}" key-field-name="ingredientId" entity-name="Ingredient">
+                    <entity-order-by field-name="ingredientName"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="recipeIngredientWeight" title="${uiLabelMap.IngredientWeight}" required-field="true"></field>
+        <field name="recipeId" title="${uiLabelMap.Product}">
+            <drop-down allow-empty="false" current-description="">
+                <entity-options description="${recipeName}" key-field-name="recipeId" entity-name="Recipe">
+                    <entity-order-by field-name="recipeName"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="recipeIngredientComments" title="${uiLabelMap.Comment}"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="RemoveRecipeIngredient" type="single" target="removeRecipeIngredient">
+        <auto-fields-service service-name="removeRecipeIngredient"/>
+        <field name="recipeIngredientId" title="${uiLabelMap.RecipeIngredientId}" required-field="true"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonRemove}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="FindRecipeIngredient" type="single" target="FindRecipeIngredient" default-entity-name="RecipeIngredient">
+	    <field name="noConditionFind"><hidden value="Y"/> <!-- if this isn't there then with all fields empty no query will be done --></field>
+	    <field name="recipeId" title="${uiLabelMap.RecipeId}"><text-find/></field>
+        <field name="ingredientId" title="${uiLabelMap.IngredientId}"><text-find/></field>
+	    <field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit"><submit button-type="button" image-location="/images/icons/magnifier.png"/></field>
+	</form>
+	  
+	<form name="ListRecipeIngredient" type="list" list-name="listIt" paginate-target="FindRecipeIngredient" default-entity-name="RecipeIngredient" separate-columns="true"
+	     header-row-style="header-row-2" default-table-style="basic-table">
+	    <actions>
+	       <service service-name="performFind" result-map="result" result-map-list="listIt">
+	           <field-map field-name="inputFields" from-field="recipeIngredientCtx"/>
+	           <field-map field-name="entityName" value="RecipeIngredient"/>
+	           <field-map field-name="orderBy" from-field="parameters.sortField"/>
+	           <field-map field-name="viewIndex" from-field="viewIndex"/>
+	           <field-map field-name="viewSize" from-field="viewSize"/>
+	        </service>
+	    </actions>
+        <field name="recipeIngredientId" title="${uiLabelMap.Id}"><display/></field>
+        <field name="recipeId" title="${uiLabelMap.RecipeId}" sort-field="true"><display/></field>
+	    <field name="ingredientId" title="${uiLabelMap.IngredientId}" sort-field="true"><display/></field>
+	    <field name="recipeIngredientWeight" title="${uiLabelMap.Weight}"><display/></field>
+	    <field name="recipeIngredientComments" title="${uiLabelMap.Comment}"><display/></field>
+	</form>
+</forms>

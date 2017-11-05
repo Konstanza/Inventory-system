@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+    <description>Facturacion Services</description>
+    <vendor></vendor>
+    <version>1.0</version>
+
+    <service name="addProductToBillTmp" default-entity-name="BillTmp" engine="java"
+        location="com.companyname.facturacion.services.FacturacionServices" invoke="addProductToBillTmp" auth="true">
+        <attribute name="billTmpRecipeId" type="String" mode="IN" optional="false"/>
+        <attribute name="billTmpId" type="String" mode="OUT" optional="false"/>
+        <attribute name="subTotal" type="Double" mode="OUT" optional="false"/>
+        <attribute name="tax" type="Double" mode="OUT" optional="false"/>
+        <attribute name="total" type="Double" mode="OUT" optional="false"/>
+    </service>
+
+    <service name="removeRecipeFromBillTmp" default-entity-name="BillTmp" engine="java"
+        location="com.companyname.facturacion.services.FacturacionServices" invoke="removeProductFromBillTmp" auth="true">
+        <attribute name="billTmpId" type="String" mode="INOUT" optional="false"/>
+        <attribute name="subTotal" type="Double" mode="OUT" optional="false"/>
+        <attribute name="tax" type="Double" mode="OUT" optional="false"/>
+        <attribute name="total" type="Double" mode="OUT" optional="false"/>
+    </service>
+
+    <service name="createBill" default-entity-name="Bill" engine="java"
+        location="com.companyname.facturacion.services.FacturacionServices" invoke="createBill" auth="true">
+        <attribute name="billClientId" type="String" mode="IN" optional="false"/>
+        <attribute name="billId" type="String" mode="OUT" optional="false"/>
+    </service>
+
+    <service name="newBill" engine="java"
+        location="com.companyname.facturacion.services.FacturacionServices" invoke="newBill">
+        <attribute name="subTotal" type="Double" mode="OUT" optional="false"/>
+        <attribute name="tax" type="Double" mode="OUT" optional="false"/>
+        <attribute name="total" type="Double" mode="OUT" optional="false"/>
+    </service>
+
+    <service name="getTax" engine="java"
+        location="com.companyname.facturacion.services.FacturacionServices" invoke="getTax">
+        <attribute name="taxPercentage" type="Double" mode="OUT" optional="false"/>
+    </service>
+
+    <service name="changeTax" engine="java"
+        location="com.companyname.facturacion.services.FacturacionServices" invoke="changeTax">
+        <attribute name="taxPercentage" type="Double" mode="INOUT" optional="false"/>
+    </service>
+
+    <service name="test" engine="java"
+        location="com.companyname.facturacion.services.FacturacionServices" invoke="test">
+        <description>Service test</description>
+    </service>
+</services>

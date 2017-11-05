@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+    <property key="Inventario">
+        <value xml:lang="en">Inventory</value>
+        <value xml:lang="es">Inventario</value>
+    </property>
+    <property key="InventarioApplication">
+        <value xml:lang="en">Inventory</value>
+        <value xml:lang="es">Inventario</value>
+    </property>
+    <property key="InventarioCompanyName">
+        <value xml:lang="en">OFBiz: Inventory</value>
+        <value xml:lang="es">OFBiz: Inventario</value>
+    </property>
+    <property key="InventarioCompanySubtitle">
+        <value xml:lang="en">Part of the Apache OFBiz Family of Open Source Software</value>
+        <value xml:lang="es">Módulo de Apache OFBiz</value>
+    </property>
+    <property key="InventarioViewPermissionError">
+        <value xml:lang="en">You are not allowed to view this page.</value>
+        <value xml:lang="es">No tiene permiso para ver está página.</value>
+    </property>
+    <property key="CreatingRecordError">
+        <value xml:lang="en">Error in record creation in entity ........</value>
+        <value xml:lang="es">Error en la creación de registro en el módulo ........</value>
+    </property>
+    <property key="RemovingRecordError">
+        <value xml:lang="en">Error in removing record in entity ........</value>
+        <value xml:lang="es">Error en la eliminación de registro en el módulo ........</value>
+    </property>
+    <property key="StoringRecordError">
+        <value xml:lang="en">Error in storing record in entity ........</value>
+        <value xml:lang="es">Error en la actualización de registro en el módulo ........</value>
+    </property>
+    <property key="GettingRecordError">
+        <value xml:lang="en">Error in getting record in entity ........</value>
+        <value xml:lang="es">Error en la lectura de registro en el módulo ........</value>
+    </property>
+    <property key="ProductsListError">
+        <value xml:lang="en">Error in updating available products in entity ........</value>
+        <value xml:lang="es">Error en la actualización de productos disponibles en el módulo ........</value>
+    </property>
+    <property key="Products">
+        <value xml:lang="en">Products</value>
+        <value xml:lang="es">Productos</value>
+    </property>
+    <property key="Product">
+        <value xml:lang="en">Product</value>
+        <value xml:lang="es">Producto</value>
+    </property>
+    <property key="Price">
+        <value xml:lang="en">Price</value>
+        <value xml:lang="es">Precio</value>
+    </property>
+    <property key="Ingredients">
+        <value xml:lang="en">Ingredients</value>
+        <value xml:lang="es">Ingredientes</value>
+    </property>
+    <property key="Recipes">
+        <value xml:lang="en">Recipes</value>
+        <value xml:lang="es">Recetas</value>
+    </property>
+    <property key="Recipe">
+        <value xml:lang="en">Recipe</value>
+        <value xml:lang="es">Receta</value>
+    </property>
+    <property key="Ingredient">
+        <value xml:lang="en">Ingredient</value>
+        <value xml:lang="es">Ingrediente</value>
+    </property>
+    <property key="RecipeIngredientFind">
+        <value xml:lang="en">Find recipe</value>
+        <value xml:lang="es">Buscar receta</value>
+    </property>
+    <property key="RecipeIngredientId">
+        <value xml:lang="en">Recipe ingredient id</value>
+        <value xml:lang="es">Id de ingrediente en receta</value>
+    </property>
+    <property key="IngredientName">
+        <value xml:lang="en">Ingredient name</value>
+        <value xml:lang="es">Nombre de ingrediente</value>
+    </property>
+    <property key="RecipeName">
+        <value xml:lang="en">Recipe name</value>
+        <value xml:lang="es">Nombre de receta</value>
+    </property>
+    <property key="IngredientWeight">
+        <value xml:lang="en">Ingredient weight</value>
+        <value xml:lang="es">Peso de ingrediente</value>
+    </property>
+    <property key="IngredientId">
+        <value xml:lang="en">Ingredient id</value>
+        <value xml:lang="es">Id de ingrediente</value>
+    </property>
+    <property key="Name">
+        <value xml:lang="en">Name</value>
+        <value xml:lang="es">Nombre</value>
+    </property>
+    <property key="Weight">
+        <value xml:lang="en">Weight</value>
+        <value xml:lang="es">Peso</value>
+    </property>
+    <property key="Id">
+        <value xml:lang="en">Id</value>
+        <value xml:lang="es">Id</value>
+    </property>
+    <property key="Available">
+        <value xml:lang="en">Available</value>
+        <value xml:lang="es">Disponible</value>
+    </property>
+    <property key="RecipeId">
+        <value xml:lang="en">Recipe id</value>
+        <value xml:lang="es">Id de receta</value>
+    </property>
+    <property key="AddIngredient">
+        <value xml:lang="en">Add ingredient</value>
+        <value xml:lang="es">Añadir ingrediente</value>
+    </property>
+    <property key="AddIngredientToRecipe">
+        <value xml:lang="en">Add ingredient to recipe</value>
+        <value xml:lang="es">Añadir ingrediente a receta</value>
+    </property>
+    <property key="RemoveIngredient">
+        <value xml:lang="en">Remove ingredient</value>
+        <value xml:lang="es">Eliminar ingrediente</value>
+    </property>
+    <property key="RemoveRecipeIngredient">
+        <value xml:lang="en">Remove recipe ingredient</value>
+        <value xml:lang="es">Eliminar ingrediente de receta</value>
+    </property>
+    <property key="AddProduct">
+        <value xml:lang="en">Add product</value>
+        <value xml:lang="es">Añadir producto</value>
+    </property>
+    <property key="RemoveProduct">
+        <value xml:lang="en">Remove product</value>
+        <value xml:lang="es">Eliminar producto</value>
+    </property>
+    <property key="IngredientType">
+        <value xml:lang="en">Type</value>
+        <value xml:lang="es">Tipo</value>
+    </property>
+    <property key="IngredientComment">
+        <value xml:lang="en">Comment</value>
+        <value xml:lang="es">Comentario</value>
+    </property>
+    <property key="RecipeComment">
+        <value xml:lang="en">Comment</value>
+        <value xml:lang="es">Comentario</value>
+    </property>
+    <property key="Comment">
+        <value xml:lang="en">Comment</value>
+        <value xml:lang="es">Comentario</value>
+    </property>
+    <property key="InventarioListRecipeIngredients">
+        <value xml:lang="en">Recipe ingredients list</value>
+        <value xml:lang="es">Lista de ingredientes en receta</value>
+    </property>
+    <property key="InventarioListIngredients">
+        <value xml:lang="en">Ingredients list</value>
+        <value xml:lang="es">Lista de ingredientes</value>
+    </property>
+    <property key="InventarioListProducts">
+        <value xml:lang="en">Products list</value>
+        <value xml:lang="es">Lista de productos</value>
+    </property>
+</resource>

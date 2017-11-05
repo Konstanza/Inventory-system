@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-menu.xsd">
+    <menu name="MainAppBar" title="${uiLabelMap.InventarioApplication}" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+    	<menu-item name="main" title="${uiLabelMap.CommonMain}"><link target="main"/></menu-item>
+        <menu-item name="Ingredients" title="${uiLabelMap.Ingredients}"><link target="Ingredients"/></menu-item>
+        <menu-item name="Products" title="${uiLabelMap.Products}"><link target="Products"/></menu-item>
+        <menu-item name="Recipes" title="${uiLabelMap.Recipes}"><link target="Recipes"/></menu-item>
+    </menu>
+</menus>

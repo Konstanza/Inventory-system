@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+	<Ingredient ingredientId="SAMPLE_DEMO_1" ingredientName="Sample First 1" IngredientComments="This is test comment for first record."/>
+    <Ingredient ingredientId="SAMPLE_DEMO_2" ingredientName="Sample First 2" IngredientWeight="2" IngredientComments="This is test comment for second record."/>
+    <Ingredient ingredientId="SAMPLE_DEMO_3" ingredientName="Sample First 3" IngredientWeight="3" IngredientComments="This is test comment for third record."/>
+    <Ingredient ingredientId="SAMPLE_DEMO_4" ingredientName="Sample First 4" IngredientWeight="400" IngredientComments="This is test comment for fourth record."/>
+    <Recipe recipeId="1" recipeName="Receta 1">
+</entity-engine-xml>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+	<BillTmp billTmpId="1" billTmpRecipeId="2" billTmpRecipePrice="3"/>
+</entity-engine-xml>

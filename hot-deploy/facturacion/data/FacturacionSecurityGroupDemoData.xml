@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="FACTURACION_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FACTURACION_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FACTURACION_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FACTURACION_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FACTURACION_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="FACTURACION_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="FACTURACION_ADMIN"/>
+</entity-engine-xml>

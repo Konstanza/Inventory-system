@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    <screen name="main">
+        <section>
+            <actions>
+                <set field="headerItem" value="main"/><!-- this highlights the selected menu-item with name "main" -->
+                <script location="component://facturacion/webapp/facturacion/WEB-INF/actions/crud/ListProductTmp.groovy"/>
+                <script location="component://facturacion/webapp/facturacion/WEB-INF/actions/crud/Tax.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="FacturacionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.CreateBill}">
+                            <include-form name="CreateBill" location="component://facturacion/widget/FacturacionForms.xml"/>
+                        </screenlet>
+                        <screenlet>
+                            <label style="h1" text="${uiLabelMap.SubTotal} ${parameters.subTotal}"/>
+                            <label style="h1" text="${uiLabelMap.Tax} (${taxPercentage}%) ${parameters.tax}"/>
+                            <label style="h1" text="${uiLabelMap.TOTAL} ${parameters.total}"/>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.AddProductToBill}">
+                            <include-form name="AddProductToBillTmp" location="component://facturacion/widget/FacturacionForms.xml"/>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.RemoveProductFromBill}">
+                            <include-form name="RemoveRecipeFromBillTmp" location="component://facturacion/widget/FacturacionForms.xml"/>
+                            <label text="&#x2063;"/>
+                            <include-form name="RemoveAllRecipesFromBillTmp" location="component://facturacion/widget/FacturacionForms.xml"/>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.ProductsList}">
+                            <platform-specific>
+                                <html><html-template location="component://facturacion/webapp/facturacion/crud/ListProductTmp.ftl"/></html>
+                            </platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="Bills">
+        <section>
+            <actions>
+                <set field="headerItem" value="Bills"/><!-- this highlights the selected menu-item with name "main" -->
+                <set field="billCtx" from-field="parameters"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="FacturacionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="FACTURACION" action="_VIEW"/>
+                            </condition>
+                            <widgets>
+                                <decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+                                    <decorator-section name="search-options">
+                                        <include-form name="FindBill" location="component://facturacion/widget/FacturacionForms.xml"/>
+                                    </decorator-section>
+                                    <decorator-section name="search-results">
+                                        <include-form name="ListBill" location="component://facturacion/widget/FacturacionForms.xml"/>
+                                        <label text="&#x2063;"/>
+                                        <include-form name="ListBillProduct" location="component://facturacion/widget/FacturacionForms.xml"/>
+                                    </decorator-section>
+                                </decorator-screen>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.FacturacionViewPermissionError}</label>
+                           </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="Config">
+        <section>
+            <actions>
+                <set field="headerItem" value="Config"/><!-- this highlights the selected menu-item with name "main" -->
+                <script location="component://facturacion/webapp/facturacion/WEB-INF/actions/crud/ListBill.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="FacturacionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.ChangeTax}">
+                            <label style="h3" text="${uiLabelMap.CurrentValue}: ${parameters.taxPercentage}%"/>
+                            <include-form name="ChangeTax" location="component://facturacion/widget/FacturacionForms.xml"/>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+</screens>

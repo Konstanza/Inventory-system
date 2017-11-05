@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    <screen name="main">
+        <section>
+            <actions>
+                <set field="headerItem" value="main"/><!-- this highlights the selected menu-item with name "main" -->
+                <script location="component://inventario/webapp/inventario/WEB-INF/actions/crud/ListProduct.groovy"/>
+                <script location="component://inventario/webapp/inventario/WEB-INF/actions/crud/ListIngredient.groovy"/>
+                <script location="component://inventario/webapp/inventario/WEB-INF/actions/crud/ListRecipeIngredient.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="InventarioCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.InventarioListProducts}">
+                            <platform-specific>
+                                <html><html-template location="component://inventario/webapp/inventario/crud/ListProduct.ftl"/></html>
+                             </platform-specific>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.InventarioListIngredients}">
+                            <platform-specific>
+                                <html><html-template location="component://inventario/webapp/inventario/crud/ListIngredient.ftl"/></html>
+                             </platform-specific>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.InventarioListRecipeIngredients}">
+                            <platform-specific>
+                                <html><html-template location="component://inventario/webapp/inventario/crud/ListRecipeIngredient.ftl"/></html>
+                             </platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="Ingredients">
+        <section>
+            <actions>
+                <set field="headerItem" value="Ingredients"/><!-- this highlights the selected menu-item with name "main" -->
+                <script location="component://inventario/webapp/inventario/WEB-INF/actions/crud/ListIngredient.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="InventarioCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.AddIngredient}">
+                            <include-form name="AddIngredient" location="component://inventario/widget/InventarioForms.xml"/>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.RemoveIngredient}">
+                            <include-form name="RemoveIngredient" location="component://inventario/widget/InventarioForms.xml"/>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.InventarioListIngredients}">
+                            <platform-specific>
+                                <html><html-template location="component://inventario/webapp/inventario/crud/ListIngredient.ftl"/></html>
+                             </platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+     <screen name="Products">
+        <section>
+            <actions>
+                <set field="headerItem" value="Products"/>
+                <script location="component://inventario/webapp/inventario/WEB-INF/actions/crud/ListProduct.groovy"/>
+                <script location="component://inventario/webapp/inventario/WEB-INF/actions/crud/ListIngredient.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="InventarioCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.AddProduct}">
+                            <include-form name="AddRecipe" location="component://inventario/widget/InventarioForms.xml"/>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.RemoveProduct}">
+                            <include-form name="RemoveRecipe" location="component://inventario/widget/InventarioForms.xml"/>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.InventarioListProducts}">
+                            <platform-specific>
+                                <html><html-template location="component://inventario/webapp/inventario/crud/ListProduct.ftl"/></html>
+                             </platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    
+    <screen name="Recipes">
+        <section>
+            <actions>
+                <set field="headerItem" value="Recipes"/>
+                <set field="titleProperty" value="Recipes"/>
+                <set field="recipeIngredientCtx" from-field="parameters"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.AddIngredientToRecipe}">
+                             <include-form name="AddIngredientToRecipe" location="component://inventario/widget/InventarioForms.xml"/>
+                        </screenlet>
+                        <screenlet title="${uiLabelMap.RemoveRecipeIngredient}">
+                             <include-form name="RemoveRecipeIngredient" location="component://inventario/widget/InventarioForms.xml"/>
+                        </screenlet>
+                        <section>
+                            <condition>
+                                <if-has-permission permission="INVENTARIO" action="_VIEW"/>
+                            </condition>
+                            <widgets>
+                                <decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+                                    <decorator-section name="search-options">
+                                        <include-form name="FindRecipeIngredient" location="component://inventario/widget/InventarioForms.xml"/>
+                                    </decorator-section>
+                                    <decorator-section name="search-results">
+                                        <include-form name="ListRecipeIngredient" location="component://inventario/widget/InventarioForms.xml"/>
+                                    </decorator-section>
+                                </decorator-screen>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.InventarioViewPermissionError}</label>
+                           </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+</screens>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+    <description>Inventario Services</description>
+    <vendor></vendor>
+    <version>1.0</version>
+
+    <service name="createIngredient" default-entity-name="Ingredient" engine="java"
+        location="com.companyname.inventario.services.InventarioServices" invoke="createIngredient" auth="true">
+        <description>Create an ingredient record using a service in Java</description>
+        <attribute name="ingredientId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="ingredientName" type="String" mode="IN" optional="false"/>
+        <attribute name="ingredientWeight" type="Long" mode="IN" optional="false"/>
+        <attribute name="ingredientComments" type="String" mode="IN" optional="true"/>
+    </service>
+
+    <service name="removeIngredient" default-entity-name="Ingredient" engine="java"
+        location="com.companyname.inventario.services.InventarioServices" invoke="removeIngredient" auth="true">
+        <description>Remove an ingredient record using a service in Java</description>
+        <attribute name="ingredientId" type="String" mode="INOUT" optional="false"/>
+    </service>
+
+    <service name="createRecipe" default-entity-name="Recipe" engine="java"
+        location="com.companyname.inventario.services.InventarioServices" invoke="createRecipe" auth="true">
+        <description>Create a product record using a service in Java</description>
+        <attribute name="recipeId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="recipeName" type="String" mode="IN" optional="false"/>
+        <attribute name="recipePrice" type="Double" mode="IN" optional="false"/>
+        <attribute name="recipeComments" type="String" mode="IN" optional="true"/>
+    </service>
+
+    <service name="removeRecipe" default-entity-name="Recipe" engine="java"
+        location="com.companyname.inventario.services.InventarioServices" invoke="removeRecipe" auth="true">
+        <description>Remove a product record using a service in Java</description>
+        <attribute name="recipeId" type="String" mode="INOUT" optional="false"/>
+    </service>
+
+    <service name="addIngredientToRecipe" default-entity-name="RecipeIngredient" engine="java"
+        location="com.companyname.inventario.services.InventarioServices" invoke="addIngredientToRecipe" auth="true">
+        <description>Edit a product record using a service in Java</description>
+        <attribute name="recipeIngredientId" type="String" mode="INOUT" optional="true"/>
+        <attribute name="ingredientId" type="String" mode="IN" optional="false"/>
+        <attribute name="recipeIngredientWeight" type="Long" mode="IN" optional="false"/>
+        <attribute name="recipeId" type="String" mode="IN" optional="false"/>
+        <attribute name="recipeIngredientComments" type="String" mode="IN" optional="true"/>
+    </service>
+
+    <service name="removeRecipeIngredient" default-entity-name="RecipeIngredient" engine="java"
+        location="com.companyname.inventario.services.InventarioServices" invoke="removeRecipeIngredient" auth="true">
+        <description>Remove a recipe ingredient record using a service in Java</description>
+        <attribute name="recipeIngredientId" type="String" mode="INOUT" optional="false"/>
+    </service>
+
+    <service name="updateAvailableProducts" engine="java"
+        location="com.companyname.inventario.services.InventarioServices" invoke="updateAvailableProducts">
+    </service>
+
+    <!--<service name="test" engine="java"
+        location="com.companyname.inventario.services.InventarioServices.java" invoke="test">
+        <description>Service test</description>
+    </service>-->
+</services>

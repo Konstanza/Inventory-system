@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+    <form name="CreateBill" type="single" target="createBill">
+        <auto-fields-service service-name="createBill"/>
+        <field name="billClientId" title="${uiLabelMap.ClientId}" required-field="true"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonCreate}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="AddProductToBillTmp" type="single" target="addProductToBillTmp">
+        <auto-fields-service service-name="addProductToBillTmp"/>
+        <field name="billTmpRecipeId" title="${uiLabelMap.Product}">
+            <drop-down allow-empty="false" current-description="">
+                <entity-options description="${recipeName}" key-field-name="recipeId" entity-name="Recipe">
+                    <entity-order-by field-name="recipeName"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="RemoveRecipeFromBillTmp" type="single" target="removeRecipeFromBillTmp">
+        <auto-fields-service service-name="removeRecipeFromBillTmp"/>
+        <field name="billTmpId" title="${uiLabelMap.Id}" required-field="true"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonRemove}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="RemoveAllRecipesFromBillTmp" type="single" target="newBill">
+        <field name="submitButton" title="${uiLabelMap.RemoveAll}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="ChangeTax" type="single" target="changeTax">
+        <auto-fields-service service-name="changeTax"/>
+        <field name="taxPercentage" title="${uiLabelMap.NewValue}" required-field="true"><text/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonChange}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="FindBill" type="single" target="FindBill" default-entity-name="Bill">
+        <field name="noConditionFind"><hidden value="Y"/></field>
+        <field name="billId" title="${uiLabelMap.BillId}"><text-find/></field>
+        <field name="billClientId" title="${uiLabelMap.ClientId}"><text-find/></field>
+        <field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit"><submit button-type="button" image-location="/images/icons/magnifier.png"/></field>
+    </form>
+      
+    <form name="ListBill" type="list" list-name="listIt" paginate-target="FindBill" default-entity-name="Bill" separate-columns="true"
+         header-row-style="header-row-2" default-table-style="basic-table">
+        <actions>
+           <service service-name="performFind" result-map="result" result-map-list="listIt">
+               <field-map field-name="inputFields" from-field="billCtx"/>
+               <field-map field-name="entityName" value="Bill"/>
+               <field-map field-name="orderBy" from-field="parameters.sortField"/>
+               <field-map field-name="viewIndex" from-field="viewIndex"/>
+               <field-map field-name="viewSize" from-field="viewSize"/>
+            </service>
+        </actions>
+        <field name="billId" title="${uiLabelMap.BillId}" sort-field="true"><display/></field>
+        <field name="billClientId" title="${uiLabelMap.ClientId}" sort-field="true"><display/></field>
+        <field name="billTotal" title="${uiLabelMap.Total}"><display/></field>
+        <field name="createdStamp" title="${uiLabelMap.CommonDate}"><display/></field>
+    </form>
+      
+    <form name="ListBillProduct" type="list" list-name="listIt" paginate-target="FindBillProduct" default-entity-name="BillRecipe" separate-columns="true"
+         header-row-style="header-row-2" default-table-style="basic-table">
+        <actions>
+           <service service-name="performFind" result-map="result" result-map-list="listIt">
+               <field-map field-name="inputFields" from-field="billCtx"/>
+               <field-map field-name="entityName" value="BillRecipe"/>
+               <field-map field-name="orderBy" from-field="parameters.sortField"/>
+               <field-map field-name="viewIndex" from-field="viewIndex"/>
+               <field-map field-name="viewSize" from-field="viewSize"/>
+            </service>
+        </actions>
+        <field name="billId" title="${uiLabelMap.BillId}" sort-field="true"><display/></field>
+        <field name="recipeId" title="${uiLabelMap.RecipeId}"><display/></field>
+    </form>
+</forms>

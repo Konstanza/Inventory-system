@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+    <property key="Facturacion">
+        <value xml:lang="en">Billing</value>
+        <value xml:lang="es">Facturación</value>
+    </property>
+    <property key="FacturacionApplication">
+        <value xml:lang="en">Billing Application</value>
+        <value xml:lang="es">Facturación</value>
+    </property>
+    <property key="FacturacionCompanyName">
+        <value xml:lang="en">OFBiz: Billing</value>
+        <value xml:lang="es">OFBiz: Facturación</value>
+    </property>
+    <property key="FacturacionCompanySubtitle">
+        <value xml:lang="en">Part of the Apache OFBiz Family of Open Source Software</value>
+        <value xml:lang="es">Módulo de Apache OFBiz</value>
+    </property>
+    <property key="FacturacionViewPermissionError">
+        <value xml:lang="en">You are not allowed to view this page.</value>
+        <value xml:lang="es">No tiene permiso para ver está página.</value>
+    </property>
+    <property key="CreatingBillError">
+        <value xml:lang="en">Error in bill creation</value>
+        <value xml:lang="es">Error en la creación de factura</value>
+    </property>
+    <property key="EmptyBillError">
+        <value xml:lang="en">The bill is empty</value>
+        <value xml:lang="es">La factura está vacía</value>
+    </property>
+    <property key="CreatingBillSuccess">
+        <value xml:lang="en">Bill record created successsfully with id: </value>
+        <value xml:lang="es">Factura creada exitosamente con id: </value>
+    </property>
+    <property key="CreateBill">
+        <value xml:lang="en">Create bill</value>
+        <value xml:lang="es">Crear factura</value>
+    </property>
+    <property key="AddProductToBill">
+        <value xml:lang="en">Add product to bill</value>
+        <value xml:lang="es">Añadir producto a factura</value>
+    </property>
+    <property key="RemoveProductFromBill">
+        <value xml:lang="en">Remove product from bill</value>
+        <value xml:lang="es">Eliminar producto de factura</value>
+    </property>
+    <property key="Products">
+        <value xml:lang="en">Products</value>
+        <value xml:lang="es">Productos</value>
+    </property>
+    <property key="Product">
+        <value xml:lang="en">Product</value>
+        <value xml:lang="es">Producto</value>
+    </property>
+    <property key="ProductId">
+        <value xml:lang="en">Product id</value>
+        <value xml:lang="es">Id de producto</value>
+    </property>
+    <property key="BillId">
+        <value xml:lang="en">Bill id</value>
+        <value xml:lang="es">Id de factura</value>
+    </property>
+    <property key="ProductName">
+        <value xml:lang="en">Product name</value>
+        <value xml:lang="es">Nombre de producto</value>
+    </property>
+    <property key="ProductPrice">
+        <value xml:lang="en">Product price</value>
+        <value xml:lang="es">Precio de producto</value>
+    </property>
+    <property key="ClientId">
+        <value xml:lang="en">Client id</value>
+        <value xml:lang="es">Cédula de cliente</value>
+    </property>
+    <property key="Amount">
+        <value xml:lang="en">Amount</value>
+        <value xml:lang="es">Monto</value>
+    </property>
+    <property key="Price">
+        <value xml:lang="en">Price</value>
+        <value xml:lang="es">Precio</value>
+    </property>
+    <property key="SubTotal">
+        <value xml:lang="en">SUBTOTAL</value>
+        <value xml:lang="es">SUBTOTAL</value>
+    </property>
+    <property key="TOTAL">
+        <value xml:lang="en">TOTAL</value>
+        <value xml:lang="es">TOTAL</value>
+    </property>
+    <property key="Total">
+        <value xml:lang="en">Total</value>
+        <value xml:lang="es">Total</value>
+    </property>
+    <property key="Tax">
+        <value xml:lang="en">TAX</value>
+        <value xml:lang="es">IVA</value>
+    </property>
+    <property key="AddProductToBill">
+        <value xml:lang="en">Add product to bill</value>
+        <value xml:lang="es">Añadir producto a factura</value>
+    </property>
+    <property key="RemoveProductFromBill">
+        <value xml:lang="en">Remove product from bill</value>
+        <value xml:lang="es">Eliminar producto de factura</value>
+    </property>
+    <property key="RemoveAll">
+        <value xml:lang="en">Remove all</value>
+        <value xml:lang="es">Eliminar todo</value>
+    </property>
+    <property key="ProductsList">
+        <value xml:lang="en">Products list</value>
+        <value xml:lang="es">Lista de productos</value>
+    </property>
+    <property key="BillProductsList">
+        <value xml:lang="en">Bill products list</value>
+        <value xml:lang="es">Lista de productos en factura</value>
+    </property>
+    <property key="BillsList">
+        <value xml:lang="en">Bills list</value>
+        <value xml:lang="es">Lista de facturas</value>
+    </property>
+    <property key="Bills">
+        <value xml:lang="en">Bills</value>
+        <value xml:lang="es">Facturas</value>
+    </property>
+    <property key="FindBill">
+        <value xml:lang="en">Find bill</value>
+        <value xml:lang="es">Buscar factura</value>
+    </property>
+    <property key="Config">
+        <value xml:lang="en">Config</value>
+        <value xml:lang="es">Configuración</value>
+    </property>
+    <property key="ChangeTax">
+        <value xml:lang="en">Change tax</value>
+        <value xml:lang="es">Cambiar iva</value>
+    </property>
+    <property key="CreatingBillError">
+        <value xml:lang="en">Error creating bill</value>
+        <value xml:lang="es">Error al crear la factura</value>
+    </property>
+    <property key="CurrentValue">
+        <value xml:lang="en">Current value</value>
+        <value xml:lang="es">Valor actual</value>
+    </property>
+    <property key="NewValue">
+        <value xml:lang="en">New value</value>
+        <value xml:lang="es">Valor nuevo</value>
+    </property>
+    <property key="RecipeId">
+        <value xml:lang="en">Product id</value>
+        <value xml:lang="es">Id de producto</value>
+    </property>
+</resource>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <!-- ========================================================= -->
+    <!-- ======================== Defaults ======================= -->
+    <!-- ========================================================= -->
+    <title>Entity of Facturacion Component</title>
+    <description>None</description>
+    <copyright></copyright>
+    <version></version>
+
+    <entity entity-name="Bill" package-name="org.ofbiz.facturacion" title="Bill Entity">
+        <field name="billId" type="id"><description>primary sequenced ID</description></field>
+        <field name="billClientId" type="id"></field>
+        <field name="billTotal" type="floating-point"></field>
+        <prim-key field="billId"/>
+    </entity>
+
+    <entity entity-name="Tax" package-name="org.ofbiz.facturacion" title="Tax Entity">
+        <field name="taxId" type="id"><description>primary sequenced ID</description></field>
+        <field name="taxPercentage" type="floating-point"></field>
+        <prim-key field="taxId"/>
+    </entity>
+
+    <entity entity-name="BillRecipe" package-name="org.ofbiz.facturacion" title="BillRecipe Entity">
+        <field name="billRecipeId" type="id"><description>primary sequenced ID</description></field>
+        <field name="billId" type="id"></field>
+        <field name="billClientId" type="id"></field>
+        <field name="recipeId" type="id"></field>
+        <prim-key field="billRecipeId"/>
+    </entity>
+
+    <entity entity-name="BillTmp" package-name="org.ofbiz.facturacion" title="BillTmp Entity">
+        <field name="billTmpId" type="id"><description>primary sequenced ID</description></field>
+        <field name="billTmpRecipeId" type="id"></field>
+        <field name="billTmpRecipeName" type="name"></field>
+        <field name="billTmpRecipePrice" type="floating-point"></field>
+        <prim-key field="billTmpId"/>
+    </entity>
+</entitymodel>

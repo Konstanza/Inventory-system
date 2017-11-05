@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="INVENTARIO_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="INVENTARIO_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="INVENTARIO_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="INVENTARIO_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="INVENTARIO_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="INVENTARIO_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="INVENTARIO_ADMIN"/>
+</entity-engine-xml>

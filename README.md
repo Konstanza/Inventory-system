@@ -1,5 +1,5 @@
 # Inventory-system
-Project for Systems development class.
+Project for Systems development course.
 
 Inventory system for a fast food restaurant.
 
